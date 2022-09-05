@@ -1,2 +1,4 @@
-# IDE_Template
-Template para crear una Infraestructura de Datos Espaciales IDE (con catálogo STAC)
+# IDE-FCyT
+Infraestructura de Datos Espaciales de la Facultad  de Ciencia y Tecnología UADER
+
+https://ide-fcyt.github.io/IDE-FCyT/

@@ -1,0 +1,34 @@
+{
+    "stac_version": "1.0.0",
+    "type": "Catalog",
+    "id": "IDE FCyT UADER",
+    "title": "IDE Facultad de Ciencia y Tecnología UADER",
+    "description": "Lista de raster y vectores presentes in [IDE FCyT datasets catalog](https://ide-fcyt.github.io/IDE-FCyT/).",
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://raw.githubusercontent.com/IDE-FCyT/IDE-FCyT/main/catalog/stac_catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "root",
+            "href": "https://raw.githubusercontent.com/IDE-FCyT/IDE-FCyT/main/catalog/stac_catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "child",
+            "id": "users/geocis/BareSurfaces/BF_1980_2019",
+            "title": "Carta de Suelo de Entre Ríos",
+            "href": "https://raw.githubusercontent.com/IDE-FCyT/IDE-FCyT/main/catalog/SuelosER.json"
+        },
+        {
+            "rel": "child",
+            "id": "users/geocis/BareSurfaces/BF_1980_2019",
+            "title": "Unidades Academicas UADER",
+            "href": "https://raw.githubusercontent.com/IDE-FCyT/IDE-FCyT/main/catalog/UA.json"
+        }
+    ]
+
+}
+
+

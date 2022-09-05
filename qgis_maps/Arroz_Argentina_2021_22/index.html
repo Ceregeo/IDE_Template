@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/ProvinciasproductorasLmitesdepartamentales_1.js"></script>
+        <script src="data/ArrozArgentinaCiclo2021_22_2.js"></script>
+        <script src="data/Lmitesprovinciales_3.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-40.81136160717577,-72.01827064783058],[-20.115966694177356,-35.18989015682727]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_GoogleEarth_0');
+        map.getPane('pane_GoogleEarth_0').style.zIndex = 400;
+        var layer_GoogleEarth_0 = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleEarth_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_GoogleEarth_0;
+        map.addLayer(layer_GoogleEarth_0);
+        function pop_ProvinciasproductorasLmitesdepartamentales_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>PROVINCIA</strong><br />' + (feature.properties['PROVINCIA'] !== null ? autolinker.link(feature.properties['PROVINCIA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>DEPARTAMTO</strong><br />' + (feature.properties['DEPARTAMTO'] !== null ? autolinker.link(feature.properties['DEPARTAMTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>SUP</strong><br />' + (feature.properties['SUP'] !== null ? autolinker.link(feature.properties['SUP'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ProvinciasproductorasLmitesdepartamentales_1_0() {
+            return {
+                pane: 'pane_ProvinciasproductorasLmitesdepartamentales_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.8392156862745098)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(217,247,108,0.5294117647058824)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ProvinciasproductorasLmitesdepartamentales_1');
+        map.getPane('pane_ProvinciasproductorasLmitesdepartamentales_1').style.zIndex = 401;
+        map.getPane('pane_ProvinciasproductorasLmitesdepartamentales_1').style['mix-blend-mode'] = 'normal';
+        var layer_ProvinciasproductorasLmitesdepartamentales_1 = new L.geoJson(json_ProvinciasproductorasLmitesdepartamentales_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ProvinciasproductorasLmitesdepartamentales_1',
+            layerName: 'layer_ProvinciasproductorasLmitesdepartamentales_1',
+            pane: 'pane_ProvinciasproductorasLmitesdepartamentales_1',
+            onEachFeature: pop_ProvinciasproductorasLmitesdepartamentales_1,
+            style: style_ProvinciasproductorasLmitesdepartamentales_1_0,
+        });
+        bounds_group.addLayer(layer_ProvinciasproductorasLmitesdepartamentales_1);
+        map.addLayer(layer_ProvinciasproductorasLmitesdepartamentales_1);
+        function pop_ArrozArgentinaCiclo2021_22_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DN'] !== null ? autolinker.link(feature.properties['DN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SUP'] !== null ? autolinker.link(feature.properties['SUP'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ZONA'] !== null ? autolinker.link(feature.properties['ZONA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO'] !== null ? autolinker.link(feature.properties['DPTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DTO'] !== null ? autolinker.link(feature.properties['DTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['path'] !== null ? autolinker.link(feature.properties['path'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ArrozArgentinaCiclo2021_22_2_0() {
+            return {
+                pane: 'pane_ArrozArgentinaCiclo2021_22_2',
+                opacity: 1,
+                color: 'rgba(243,10,22,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,10,22,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ArrozArgentinaCiclo2021_22_2');
+        map.getPane('pane_ArrozArgentinaCiclo2021_22_2').style.zIndex = 402;
+        map.getPane('pane_ArrozArgentinaCiclo2021_22_2').style['mix-blend-mode'] = 'normal';
+        var layer_ArrozArgentinaCiclo2021_22_2 = new L.geoJson(json_ArrozArgentinaCiclo2021_22_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ArrozArgentinaCiclo2021_22_2',
+            layerName: 'layer_ArrozArgentinaCiclo2021_22_2',
+            pane: 'pane_ArrozArgentinaCiclo2021_22_2',
+            onEachFeature: pop_ArrozArgentinaCiclo2021_22_2,
+            style: style_ArrozArgentinaCiclo2021_22_2_0,
+        });
+        bounds_group.addLayer(layer_ArrozArgentinaCiclo2021_22_2);
+        map.addLayer(layer_ArrozArgentinaCiclo2021_22_2);
+        function pop_Lmitesprovinciales_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>PROVINCIA</strong><br />' + (feature.properties['PROVINCIA'] !== null ? autolinker.link(feature.properties['PROVINCIA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['COUNT'] !== null ? autolinker.link(feature.properties['COUNT'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Lmitesprovinciales_3_0() {
+            return {
+                pane: 'pane_Lmitesprovinciales_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Lmitesprovinciales_3');
+        map.getPane('pane_Lmitesprovinciales_3').style.zIndex = 403;
+        map.getPane('pane_Lmitesprovinciales_3').style['mix-blend-mode'] = 'normal';
+        var layer_Lmitesprovinciales_3 = new L.geoJson(json_Lmitesprovinciales_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Lmitesprovinciales_3',
+            layerName: 'layer_Lmitesprovinciales_3',
+            pane: 'pane_Lmitesprovinciales_3',
+            onEachFeature: pop_Lmitesprovinciales_3,
+            style: style_Lmitesprovinciales_3_0,
+        });
+        bounds_group.addLayer(layer_Lmitesprovinciales_3);
+        map.addLayer(layer_Lmitesprovinciales_3);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/Lmitesprovinciales_3.png" /> Límites provinciales': layer_Lmitesprovinciales_3,'<img src="legend/ArrozArgentinaCiclo2021_22_2.png" /> Arroz - Argentina - Ciclo 2021_22': layer_ArrozArgentinaCiclo2021_22_2,'<img src="legend/ProvinciasproductorasLmitesdepartamentales_1.png" /> Provincias productoras - Límites departamentales': layer_ProvinciasproductorasLmitesdepartamentales_1,"Google Earth": layer_GoogleEarth_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
