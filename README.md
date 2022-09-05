@@ -1,4 +1,5 @@
-# IDE-FCyT
-Infraestructura de Datos Espaciales de la Facultad  de Ciencia y Tecnología UADER
+# IDE
+Template para la creación de una
+Infraestructura de Datos Espaciales
 
-https://ide-fcyt.github.io/IDE-FCyT/
+https://ceregeo.github.io/IDE_Template/
