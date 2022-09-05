@@ -1,12 +1,12 @@
-site_name: Infraestructura de Datos Espaciales FCyT UADER
-site_description: Community Datasets in Google Earth Engine
+site_name: Infraestructura de Datos Espaciales
+site_description: Template para la creación de una Infraestructura de Datos Espaciales
 site_author: Fernando Tentor
-site_url: https://ide-fcyt.github.io/IDE-FCyT/
+site_url: https://Ceregeo.github.io/IDE_Template/
 
 
 # Repository
-repo_name: IDE-FCyT/IDE-FCyT
-repo_url: https://github.com/IDE-FCyT/IDE-FCyT
+repo_name: Ceregeo/IDE_Template
+repo_url: https://github.com/Ceregeo/IDE_Template
 edit_uri: ./edit/main/docs
 
 # Copyright
